@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درع العراق الرقمي - Iraq Digital Shield</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sections.css">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Meta tags for SEO and social sharing -->
+    <meta name="description" content="درع العراق الرقمي - نظام شامل لمكافحة الابتزاز الإلكتروني وحماية المواطنين العراقيين من الجرائم الإلكترونية">
+    <meta name="keywords" content="الابتزاز الإلكتروني, الأمن السيبراني, العراق, الحماية الرقمية, مكافحة الجرائم الإلكترونية">
+    <meta name="author" content="Fsociety Iraq">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="درع العراق الرقمي - Iraq Digital Shield">
+    <meta property="og:description" content="نظام شامل لمكافحة الابتزاز الإلكتروني وحماية المواطنين العراقيين">
+    <meta property="og:image" content="assets/icon.png">
+    <meta property="og:type" content="website">
+    
+    <!-- PWA support -->
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="درع العراق الرقمي">
+    
+    <style>
+        /* إضافة بعض التحسينات للنسخة الويب */
+        .web-note {
+            background: rgba(255, 193, 7, 0.1);
+            border: 1px solid #ffc107;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            font-size: 14px;
+        }
+        
+        .web-note p {
+            margin: 0;
+            color: #ffc107;
+        }
+        
+        .version-info {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #dc3545;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- شاشة تسجيل الدخول -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="assets/icon.png" alt="درع العراق الرقمي" class="logo">
+                <h1 class="app-title">درع العراق الرقمي</h1>
+                <p class="app-subtitle">نظام مكافحة الابتزاز الإلكتروني</p>
+            </div>
+            
+            <div class="login-form">
+                <div class="input-group">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" placeholder="أدخل كلمة المرور">
+                </div>
+                <button id="loginBtn" class="login-btn">دخول</button>
+                <div id="loginError" class="error-message" style="display: none;">
+                    كلمة المرور غير صحيحة
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- الواجهة الرئيسية -->
+    <div id="mainApp" class="main-app" style="display: none;">
+        <!-- شريط العلوي -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="assets/icon.png" alt="درع العراق الرقمي" class="header-logo">
+                    <h1>درع العراق الرقمي</h1>
+                </div>
+                <div class="header-controls">
+                    <button id="ghostModeBtn" class="ghost-mode-btn" title="وضع الشبح">
+                        <span class="ghost-icon">👻</span>
+                    </button>
+                    <button id="settingsBtn" class="settings-btn" title="الإعدادات">
+                        <span class="settings-icon">⚙️</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- القائمة الرئيسية -->
+        <main class="main-content">
+            <div class="dashboard">
+                <div class="section-grid">
+                    <!-- قسم التوعية والوقاية -->
+                    <div class="section-card" data-section="awareness">
+                        <div class="card-icon">🛡️</div>
+                        <h3>التوعية والوقاية</h3>
+                        <p>دليل شامل للحماية من الابتزاز الإلكتروني</p>
+                    </div>
+
+                    <!-- قسم توثيق الأدلة -->
+                    <div class="section-card" data-section="evidence">
+                        <div class="card-icon">📹</div>
+                        <h3>توثيق الأدلة</h3>
+                        <p>تسجيل وحفظ الأدلة بشكل آمن</p>
+                    </div>
+
+                    <!-- قسم الدعم والإبلاغ -->
+                    <div class="section-card" data-section="support">
+                        <div class="card-icon">📞</div>
+                        <h3>الدعم والإبلاغ</h3>
+                        <p>التواصل مع الجهات المختصة</p>
+                    </div>
+
+                    <!-- قسم الأدوات المساعدة -->
+                    <div class="section-card" data-section="tools">
+                        <div class="card-icon">🔍</div>
+                        <h3>أدوات مساعدة</h3>
+                        <p>أدوات تحليل وتشفير النصوص</p>
+                    </div>
+
+                    <!-- سجل الإجراءات -->
+                    <div class="section-card" data-section="logs">
+                        <div class="card-icon">📋</div>
+                        <h3>سجل الإجراءات</h3>
+                        <p>تتبع جميع العمليات المنجزة</p>
+                    </div>
+
+                    <!-- الإعدادات -->
+                    <div class="section-card" data-section="settings">
+                        <div class="card-icon">⚙️</div>
+                        <h3>الإعدادات</h3>
+                        <p>تخصيص البرنامج وإعداداته</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- الأقسام المختلفة -->
+        <div id="sectionsContainer" style="display: none;">
+            <!-- سيتم إضافة محتوى الأقسام هنا -->
+        </div>
+    </div>
+
+    <!-- وضع الشبح -->
+    <div id="ghostMode" class="ghost-mode" style="display: none;">
+        <div class="fake-browser">
+            <div class="browser-header">
+                <div class="browser-buttons">
+                    <span class="btn-close"></span>
+                    <span class="btn-minimize"></span>
+                    <span class="btn-maximize"></span>
+                </div>
+                <div class="address-bar">https://www.google.com</div>
+            </div>
+            <div class="browser-content">
+                <h2>Google</h2>
+                <div class="search-box">
+                    <input type="text" placeholder="البحث في Google أو كتابة عنوان URL">
+                    <button>بحث Google</button>
+                </div>
+            </div>
+        </div>
+        <button id="exitGhostMode" class="exit-ghost-btn">العودة للبرنامج</button>
+    </div>
+
+    <!-- معلومات الإصدار -->
+    <div class="version-info">
+        النسخة الويب v1.0.0 | Fsociety Iraq
+    </div>
+
+    <script src="script.js"></script>
+    <audio id="successSound" preload="auto">
+        <source src="assets/success.wav" type="audio/wav">
+    </audio>
+    <audio id="errorSound" preload="auto">
+        <source src="assets/error.wav" type="audio/wav">
+    </audio>
+</body>
+</html>
+
